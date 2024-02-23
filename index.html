@@ -18,15 +18,17 @@
 	</style>
 </head>
 <body>
-	<canvas id="demo"></canvas>
-	<script src="./dist/stripe-gradient.js"></script>
+	<div style="padding: 20px;">
+		<canvas style="width: 640px; height: 320px;" id="demo"></canvas>
+	</div>
+	<script src="./dist/browser.js"></script>
 	<script>
 		(function() {
 			'use strict';
 
 			new Gradient({
 				canvas: 'canvas#demo',
-				colors: ['#a960ee', '#ff333d', '#90e0ff', '#ffcb57']
+				colors: ['#000000', '#2C387E', '#9196B6', '#21D19F']
 			});
 
 		})();

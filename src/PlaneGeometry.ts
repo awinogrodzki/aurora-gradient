@@ -1,33 +1,40 @@
 import Attribute from './Attribute.js';
+import MiniGL from './MiniGL.js';
+
+export type PlaneGeometryProperties = {
+    width?: number;
+    height?: number;
+    orientation?: Orientation;
+}
+
+export interface PlaneGeometryAttributes {
+    position: Attribute;
+    uv: Attribute;
+    uvNorm: Attribute;
+    index: Attribute;
+}
+
+type Orientation = 'xz';
 
 export default class PlaneGeometry {
 
-    /**
-     * The parent MiniGL controller.
-     *
-     * @type {MiniGL}
-     * @private
-     */
-    gl;
+    private gl: MiniGL;
 
-    attributes;
+    public attributes: PlaneGeometryAttributes;
+    public width?: number;
+    public height?: number;
+    public orientation?: Orientation;
 
-    /**
-     *
-     * @param {MiniGL} minigl
-     * @param width
-     * @param height
-     * @param n
-     * @param i
-     * @param orientation
-     * @param {object} properties
-     */
-    constructor(minigl, width, height, n, i, orientation, properties = {}) {
+    private xSegCount: number = 0;
+    private ySegCount: number = 0;
+    private vertexCount: number = 0;
+    private quadCount: number = 0;
 
-        // Add additional properties.
-        Object.assign(this, properties);
+    constructor(minigl: MiniGL, width: number, height: number, n: number, i: number, orientation: Orientation, properties: PlaneGeometryProperties = {}) {
 
-        // Set required properties.
+        this.width = properties.width;
+        this.height = properties.height;
+        this.orientation = properties.orientation;
         this.gl = minigl;
 
         const context = this.gl.getContext();
@@ -82,7 +89,7 @@ export default class PlaneGeometry {
         this.attributes.index.update();
     }
 
-    setSize(width = 1, height = 1, orientation = 'xz') {
+    setSize(width = 1, height = 1, orientation: Orientation = 'xz') {
         this.width = width;
         this.height = height;
         this.orientation = orientation;

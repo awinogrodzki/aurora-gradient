@@ -19,6 +19,8 @@
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+lib/*
+
 ### macOS ###
 # General
 .DS_Store
@@ -28,6 +30,8 @@
 # Icon must end with two \r
 Icon
 
+src/*.js
+src/**/*.js
 
 # Thumbnails
 ._*

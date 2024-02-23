@@ -1,8 +1,9 @@
 {
-  "name": "@thelevicole/stripe-gradient",
-  "version": "1.0.0",
-  "description": "A reverse engineered, and simplified javascript library to replicate the animated Stripe gradients.",
-  "main": "dist/stripe-gradient.js",
+  "name": "aurora-gradient",
+  "version": "0.0.1",
+  "description": "A forked version of thelevicole/stripe-gradient adapted for TypeScript",
+  "main": "lib/index.js",
+  "type": "module",
   "keywords": [
     "stripe",
     "gradient",
@@ -16,21 +17,23 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thelevicole/stripe-gradient.git"
+    "url": "git+https://github.com/awinogrodzki/aurora-gradient.git"
   },
   "author": {
-    "name": "Levi Cole",
-    "email": "dev@thelevicole.com"
+    "name": "Amadeusz Winogrodzki",
+    "email": "amadeusz.winogrodzki@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/thelevicole/stripe-gradient/issues"
+    "url": "https://github.com/awinogrodzki/aurora-gradient/issues"
   },
-  "homepage": "https://thelevicole.com/stripe-gradient/",
   "devDependencies": {
-    "laravel-mix": "^6.0.43"
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.12.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
   },
   "scripts": {
-    "build": "mix --production",
-    "watch": "mix --production -- --watch --progress"
+    "build:browser": "rollup -c rollup.config.js",
+    "build": "tsc"
   }
 }
