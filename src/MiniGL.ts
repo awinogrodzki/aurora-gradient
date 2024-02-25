@@ -1,5 +1,5 @@
-import Mesh from './Mesh.js';
-import { FloatUniform, Mat4Uniform, Uniform, Vec2Uniform, } from './Uniform.js';
+import Mesh from './Mesh';
+import { FloatUniform, Mat4Uniform, Uniform, Vec2Uniform, } from './Uniform';
 
 type CommonUniforms = {
     projectionMatrix: Uniform;

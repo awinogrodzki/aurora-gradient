@@ -1,5 +1,5 @@
-import MiniGL from './MiniGL.js';
-import { Uniform, UniformType } from './Uniform.js';
+import MiniGL from './MiniGL';
+import { Uniform, UniformType } from './Uniform';
 
 export type MaterialProperties = {};
 

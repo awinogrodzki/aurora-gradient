@@ -1,4 +1,4 @@
-import Gradient from './Gradient.js';
+import Gradient from './Gradient';
 
 declare global {
   interface Window {

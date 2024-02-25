@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./src",
     "target": "es2017",
     "lib": [
       "es5",
@@ -24,11 +26,9 @@
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
-    "module": "CommonJS",
-    "isolatedModules": false,
-    "jsx": "react-jsx",
-    "outDir": "./lib",
-    "rootDir": "./src"
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "include": [
     "./src/**/*.ts"

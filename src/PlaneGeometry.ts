@@ -1,5 +1,5 @@
-import Attribute from './Attribute.js';
-import MiniGL from './MiniGL.js';
+import Attribute from './Attribute';
+import MiniGL from './MiniGL';
 
 export type PlaneGeometryProperties = {
     width?: number;

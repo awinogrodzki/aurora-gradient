@@ -1,1 +1,1 @@
-export { default as Gradient } from './Gradient.js';
+export { default as Gradient } from './Gradient';

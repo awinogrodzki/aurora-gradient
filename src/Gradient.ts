@@ -1,12 +1,12 @@
-import MiniGL from './MiniGL.js';
-import Blend from './ShadersJs/Blend.js';
-import Fragment from './ShadersJs/Fragment.js';
-import Noise from './ShadersJs/Noise.js';
-import Vertex from './ShadersJs/Vertex.js';
-import { ArrayUniform, FloatUniform, StructUniform, Uniform, Vec2Uniform, Vec3Uniform, Vec4Uniform } from './Uniform.js';
-import Material from './Material.js';
-import Mesh from './Mesh.js';
-import PlaneGeometry from './PlaneGeometry.js';
+import MiniGL from './MiniGL';
+import Blend from './ShadersJs/Blend';
+import Fragment from './ShadersJs/Fragment';
+import Noise from './ShadersJs/Noise';
+import Vertex from './ShadersJs/Vertex';
+import { ArrayUniform, FloatUniform, StructUniform, Uniform, Vec2Uniform, Vec3Uniform, Vec4Uniform } from './Uniform';
+import Material from './Material';
+import Mesh from './Mesh';
+import PlaneGeometry from './PlaneGeometry';
 
 interface GradientOptions {
   canvas: HTMLCanvasElement | null;
@@ -83,7 +83,6 @@ export default class Gradient {
 
     this.setCanvas(this.findCanvas(this.getOption('canvas') as string | HTMLCanvasElement)!);
     this._minigl = new MiniGL(this.getCanvas(), this.getCanvas().offsetWidth, this.getCanvas().offsetHeight);
-    this.init();
   }
 
   getOption<T extends any>(name: keyof GradientOptions, defaultValue: T | null | undefined = undefined): T {
@@ -118,7 +117,7 @@ export default class Gradient {
 
   getCanvas() {
     if (!this._canvas) {
-      throw 'Missing Canvas. Pass the canvas to the Gradient constructor.';
+      throw new Error('Missing Canvas. Pass the canvas to the Gradient constructor.');
     }
 
     return this._canvas;
