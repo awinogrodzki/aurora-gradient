@@ -95,12 +95,8 @@ export default class Gradient {
 
   findCanvas(selector: string | HTMLCanvasElement): HTMLCanvasElement | null {
     const canvas = typeof selector === 'string' ? document.querySelector(selector) : selector;
-
-    if (canvas instanceof HTMLCanvasElement) {
-      return canvas;
-    }
-
-    return null;
+    
+    return (canvas as HTMLCanvasElement) ?? null;
   }
 
   setCanvas(canvas: HTMLCanvasElement) {
