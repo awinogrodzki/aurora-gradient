@@ -1,6 +1,6 @@
 {
   "name": "aurora-gradient",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A forked version of thelevicole/stripe-gradient adapted for TypeScript",
   "main": "lib/index.js",
   "files": [

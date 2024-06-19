@@ -1,11 +1,11 @@
-import typescript from '@rollup/plugin-typescript';
+const typescript = require("@rollup/plugin-typescript");
 
-export default {
-  input: './src/browser.ts',
+module.exports = {
+  input: "./src/browser.ts",
   output: {
     sourcemap: true,
-    dir: 'dist',
-    format: 'cjs'
+    dir: "dist",
+    format: "cjs",
   },
-  plugins: [typescript({ tsconfig: 'tsconfig.rollup.json' })]
-}
+  plugins: [typescript({ tsconfig: "tsconfig.rollup.json" })],
+};
